@@ -1,6 +1,7 @@
 package com.example.cardsapp.ui.black_jack
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -116,6 +117,7 @@ fun BlackJackScreen(
                     }
 
                     is Resource.Fail -> {
+                        Log.d("***fail", response.message)
                         isProgression = false
                         isGameStarted = false
                         if(isShowingAlert) {
@@ -140,16 +142,14 @@ fun BlackJackScreen(
             }
 
             alert?.value.let { alert ->
-                if(isShowingAlert) {
+                if(isShowingAlert && alert != null) {
                     AlertDialogExample(
                         onDismissRequest = { isShowingAlert = false },
                         onConfirmation = { viewModel?.getShuffleDeck() },
                         dialogTitle = "Alert",
-                        dialogText = alert.orEmpty(),
+                        dialogText = alert,
                         icon = Icons.Default.Info
                     )
-                } else {
-
                 }
             }
 
