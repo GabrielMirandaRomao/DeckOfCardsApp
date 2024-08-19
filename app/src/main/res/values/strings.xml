@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CardsApp</string>
+    <string name="get_deck_button">Get deck</string>
+    <string name="shuffle_deck_button">Shuffle deck</string>
+    <string name="deck_id">Deck id: %s</string>
+    <string name="play_black_jack">Play black jack</string>
+</resources>
